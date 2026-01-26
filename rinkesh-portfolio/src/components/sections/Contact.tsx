@@ -91,7 +91,6 @@ const Contact: React.FC = () => {
               action="/#success"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              data-netlify-recaptcha="true"
               className="space-y-4"
             >
               {/* Netlify required */}
