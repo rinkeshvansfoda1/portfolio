@@ -91,6 +91,7 @@ const Contact: React.FC = () => {
               action="/#success"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              data-netlify-recaptcha="true"
               className="space-y-4"
             >
               {/* Netlify required */}
@@ -134,6 +135,8 @@ const Contact: React.FC = () => {
                   className="form-input w-full bg-background border border-border rounded-lg px-3 py-2 text-sm h-28 resize-none focus:outline-none"
                 />
               </div>
+            
+              <div data-netlify-recaptcha="true"></div>
 
               <button
                 type="submit"
