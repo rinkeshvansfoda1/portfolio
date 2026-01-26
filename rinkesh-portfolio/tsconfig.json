@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    // "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "strict": true,
+    "skipLibCheck": true,
+
+    /* Enable incremental builds so tsBuildInfoFile is allowed */
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.cache/tsconfig.tsbuildinfo",
+
+    /* Newer options that need recent TypeScript */
+    //"noUncheckedSideEffectImports": true,
+    //"erasableSyntaxOnly": false
+
+    /* ...other existing options... */
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

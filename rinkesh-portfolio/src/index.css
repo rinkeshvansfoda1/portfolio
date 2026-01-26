@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom classes from your original CSS */
+
+.glass-effect {
+  background: rgba(5, 8, 22, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.gradient-ring {
+  background: linear-gradient(45deg, #6366f1, #22c55e, #f97316);
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.timeline-dot {
+  position: relative;
+}
+
+.timeline-dot::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #6366f1;
+  border: 3px solid #0f172a;
+}
+
+.timeline-line {
+  position: absolute;
+  left: -18px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(99, 102, 241, 0.3);
+}
+
+.skill-bar {
+  transition: width 1.5s ease-out;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.form-input:focus {
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+@media (max-width: 768px) {
+  .timeline-dot::before {
+    left: -16px;
+  }
+
+  .timeline-line {
+    left: -10px;
+  }
+}
+
+/* src/index.css (or global stylesheet) - ADD THESE */
+html,
+body {
+  box-sizing: border-box;
+  overscroll-behavior-x: none; /* prevents touch fling creating small overflows on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Make all elements use border-box so padding doesn't push width */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Prevent any accidental horizontal scroll globally (safe for most layouts).
+   If you need horizontal scroll for specific components (carousels), allow it specifically. */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure images and media cannot overflow */
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+  display: block; /* avoids inline gap issues */
+}
+
+/* Make project image container respect aspect and clipping */
+.project-card .project-image {
+  display: block;
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Ensure gradient-ring and similar decorative wrappers don't overflow */
+.gradient-ring {
+  max-width: 28rem; /* prevents huge fixed sizes */
+  width: 100%;
+  overflow: hidden;
+}
+
+/* timeline: hide decorative absolute stuff on small screens */
+@media (max-width: 767px) {
+  .timeline-line,
+  .timeline-dot::before {
+    display: none;
+  }
+}
