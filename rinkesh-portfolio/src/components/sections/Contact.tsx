@@ -90,6 +90,8 @@ const Contact: React.FC = () => {
               method="POST"
               action="/#success"
               data-netlify="true"
+              data-netlify-honeypot="bot-field"
+              data-netlify-captcha="true"
               className="space-y-4"
             >
               {/* Netlify required */}
