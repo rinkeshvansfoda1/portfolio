@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import resume from '../assets/Resume/Rinkesh_Vansfoda.pdf';
 
 interface NavbarProps {
   onNavClick: (id: string) => void;
@@ -23,7 +24,8 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
 
   const DownLoadResume=()=>{
     const link=document.createElement('a');
-    link.href='../src/assets/Resume/Rinkesh_Vansfoda.pdf';
+    // link.href='../src/assets/Resume/Rinkesh_Vansfoda.pdf';
+    link.href=resume;
     link.download='Rinkesh_Vansfoda_Resume.pdf';
     document.body.appendChild(link);
     link.click();
