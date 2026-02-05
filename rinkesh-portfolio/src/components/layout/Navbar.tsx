@@ -21,29 +21,9 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
     setOpen(false);
   };
 
-  const DownLoadResume=async ()=>{
-    // const link=document.createElement('a');
-    // // link.href='../src/assets/Resume/Rinkesh_Vansfoda.pdf';
-    // link.href = '/Resume/Rinkesh_Vansfoda.pdf'; // absolute path
-    // link.download='Rinkesh_Vansfoda_Resume.pdf';
-    // document.body.appendChild(link);
-    // link.click();
-    // document.body.removeChild(link);
-
-  const response = await fetch('/Resume/Rinkesh_Vansfoda_Resume.pdf');
-  const blob = await response.blob();
-
-  const url = window.URL.createObjectURL(blob);
-  const link = document.createElement('a');
-  link.href = url;
-  link.download = 'Rinkesh_Vansfoda_Resume.pdf';
-
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-
-  window.URL.revokeObjectURL(url);
-  }
+  const DownLoadResume = () => {
+    window.location.href = '/Resume/Rinkesh_Vansfoda.pdf';
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
