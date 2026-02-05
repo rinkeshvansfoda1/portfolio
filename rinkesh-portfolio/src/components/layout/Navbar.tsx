@@ -21,14 +21,28 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
     setOpen(false);
   };
 
-  const DownLoadResume=()=>{
-    const link=document.createElement('a');
-    // link.href='../src/assets/Resume/Rinkesh_Vansfoda.pdf';
-    link.href = '/Resume/Rinkesh_Vansfoda.pdf'; // absolute path
-    link.download='Rinkesh_Vansfoda_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const DownLoadResume=async ()=>{
+    // const link=document.createElement('a');
+    // // link.href='../src/assets/Resume/Rinkesh_Vansfoda.pdf';
+    // link.href = '/Resume/Rinkesh_Vansfoda.pdf'; // absolute path
+    // link.download='Rinkesh_Vansfoda_Resume.pdf';
+    // document.body.appendChild(link);
+    // link.click();
+    // document.body.removeChild(link);
+
+  const response = await fetch('/Resume/Rinkesh_Vansfoda.pdf');
+  const blob = await response.blob();
+
+  const url = window.URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'Rinkesh_Vansfoda_Resume.pdf';
+
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+
+  window.URL.revokeObjectURL(url);
   }
 
   return (
