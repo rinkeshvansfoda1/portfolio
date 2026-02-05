@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
     // link.click();
     // document.body.removeChild(link);
 
-  const response = await fetch('/Resume/Rinkesh_Vansfoda.pdf');
+  const response = await fetch('/Resume/Rinkesh_Vansfoda_Resume.pdf');
   const blob = await response.blob();
 
   const url = window.URL.createObjectURL(blob);
