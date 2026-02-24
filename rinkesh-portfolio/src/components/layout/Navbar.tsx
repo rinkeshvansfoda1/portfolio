@@ -22,9 +22,14 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
   };
 
   const DownLoadResume = () => {
-    window.location.href = '/Resume/Rinkesh_Vansfoda.pdf';
+    const link = document.createElement('a');
+    link.href = '/Resume/Rinkesh_Vansfoda.pdf';
+    link.download = '';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
-
+  
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <nav className="container mx-auto px-6 py-4">
