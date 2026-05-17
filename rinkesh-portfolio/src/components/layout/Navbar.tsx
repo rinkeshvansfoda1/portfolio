@@ -23,7 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavClick }) => {
 
   const DownLoadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Resume/Rinkesh_Vansfoda.pdf';
+    link.href = '/Resume/RinkeshKhaireResume.pdf';
     link.download = '';
     document.body.appendChild(link);
     link.click();

@@ -73,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
             <img
               // src="https://picsum.photos/300?random=1"
               src={hero_img}
-              alt="Rinkesh Vansfoda - Full Stack Developer"
+              alt="Rinkesh Khaire - Full Stack Developer"
               className="w-full h-full rounded-full object-cover"
               loading="lazy"
             />
