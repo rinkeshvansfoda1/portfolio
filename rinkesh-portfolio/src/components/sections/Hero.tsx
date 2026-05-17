@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ onNavClick }) => {
           </div>
 
           <h1 className="text-5xl md:text-6xl font-bold font-heading mb-4">
-            Rinkesh Vansfoda
+            Rinkesh Khaire
           </h1>
 
           <h2 className="text-3xl md:text-4xl font-semibold text-primary mb-6">
